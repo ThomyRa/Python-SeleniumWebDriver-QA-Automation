@@ -38,3 +38,20 @@ my_confirm_alert = driver.switch_to.alert
 my_confirm_alert.dismiss()
 rs_message = driver.find_element('id', 'userResponse1').text
 assert rs_message == "Too bad!!! You would've loved it!", "Wrong message after accepting"
+
+#########################################################
+# Example 3:
+my_js_input_btn = driver.find_element(By.CSS_SELECTOR, 'div#jsPromptExample button')
+my_js_input_btn.click()
+time.sleep(2)
+
+my_input_alert = driver.switch_to.alert
+# pdb.set_trace()
+my_input_alert.send_keys("Hello world!")
+time.sleep(2)
+my_input_alert.accept()
+
+input_message = driver.find_element(By.ID, 'userResponse2').text
+print(input_message)
+pdb.set_trace()
+assert input_message == "You have entered: Hello world!", "Wrong message after accepting"
