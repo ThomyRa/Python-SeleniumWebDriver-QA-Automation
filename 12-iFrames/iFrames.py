@@ -41,7 +41,14 @@ driver.get(url)
 
 #####################################################
 # Example of iFrame: Using 'ID'
-driver.switch_to.frame('myFrame1')
+# driver.switch_to.frame('myFrame1')
+# driver.find_element(By.ID, 'btnInFrame').click()
+# print(driver.switch_to.alert.text)
+# driver.switch_to.alert.dismiss()
+
+#####################################################
+# Example of iFrame: Using 'Index'
+driver.switch_to.frame(0)
 driver.find_element(By.ID, 'btnInFrame').click()
 print(driver.switch_to.alert.text)
 driver.switch_to.alert.dismiss()
