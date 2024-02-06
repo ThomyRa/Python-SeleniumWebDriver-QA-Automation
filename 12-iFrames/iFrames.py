@@ -29,12 +29,19 @@ driver.get(url)
 
 #####################################################
 # Example of iFrame: Using 'WebElement'
-my_frame = driver.find_element(By.ID, 'myFrame1')
-driver.switch_to.frame(my_frame)
+# my_frame = driver.find_element(By.ID, 'myFrame1')
+# driver.switch_to.frame(my_frame)
+# driver.find_element(By.ID, 'btnInFrame').click()
+# print(driver.switch_to.alert.text)
+# driver.switch_to.alert.dismiss()
+#
+# driver.switch_to.default_content()
+# driver.find_element(By.ID, 'btnOutFrame').click()
+# driver.switch_to.alert.dismiss()
+
+#####################################################
+# Example of iFrame: Using 'ID'
+driver.switch_to.frame('myFrame1')
 driver.find_element(By.ID, 'btnInFrame').click()
 print(driver.switch_to.alert.text)
-driver.switch_to.alert.dismiss()
-
-driver.switch_to.default_content()
-driver.find_element(By.ID, 'btnOutFrame').click()
 driver.switch_to.alert.dismiss()
