@@ -30,7 +30,11 @@ driver.switch_to.window(new_window)
 print("After switching focus: " + driver.title)
 
 # We can close the new tab with
-print("Closing tab")
+print("Closing tab...")
 driver.close()
 
+# After closing the window/tab, we can switch back to original
+print("Switching to original window")
+driver.switch_to.window(all_window_handles[0])
+print("After switching focus: " + driver.title)
 
