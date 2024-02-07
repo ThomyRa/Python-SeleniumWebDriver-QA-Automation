@@ -12,7 +12,25 @@ driver.get(url)
 
 driver.find_element(By.XPATH, '//*[@id="windows"]/a[1]').click()
 
+# This statement fail because element not in focus
 # my_heading = driver.find_element('xpath', '/html/body/h1').text
 print("Before switching focus: " + driver.title)
+
+# Getting current window/tab handle
+original_window_handle = driver.current_window_handle
+
+# Getting all windows/tabs handles as a list
+all_window_handles = driver.window_handles
+
+# Getting the actual window/tab after opened
+new_window = all_window_handles[1]
+
+# Switching to new window
+driver.switch_to.window(new_window)
+print("After switching focus: " + driver.title)
+
+# We can close the new tab with
+print("Closing tab")
+driver.close()
 
 
